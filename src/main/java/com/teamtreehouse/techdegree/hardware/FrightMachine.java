@@ -5,27 +5,34 @@ import com.example.accessory.Horn;
 import com.example.accessory.Strobe;
 import com.example.motion.MotionDetector;
 
+import java.util.Observer;
+
 
 public class FrightMachine extends MotionDetector {
 
-    private final Horn horn;
-    private final Strobe strobe;
-    private final Camera camera;
-    private final CameraAdapter cameraAdapter;
+    //private final Horn horn;
+    //private final Strobe strobe;
+    //private final Camera camera;
+    //private final CameraAdapter cameraAdapter;
 
     public FrightMachine() {
-        horn = new Horn();
-        strobe = new Strobe();
-        camera = new Camera();
-        cameraAdapter = new CameraAdapter(camera);
-        this.addObserver(cameraAdapter);
-        this.addObserver(horn);
-        this.addObserver(strobe);
+        //horn = new Horn();
+        //strobe = new Strobe();
+        //camera = new Camera();
+        //cameraAdapter = new CameraAdapter(camera);
+        //this.addObserver(cameraAdapter);
+        //this.addObserver(horn);
+        //this.addObserver(strobe);
     }
 
     @Override
     public void onMotionDetected() {
         setChanged();
         notifyObservers();
+    }
+
+    public void addObservers(Observer observer) {
+        this.addObserver(observer);
+        super.observers.add(observer);
     }
 }
