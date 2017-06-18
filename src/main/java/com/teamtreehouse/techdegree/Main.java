@@ -19,9 +19,9 @@ public class Main {
         CameraAdapter cameraAdapter = new CameraAdapter(camera);
 
         FrightMachine machine = new FrightMachine();
-        machine.addObserver(cameraAdapter);
-        machine.addObserver(horn);
-        machine.addObserver(strobe);
+        machine.addAccessory(strobe);
+        machine.addAccessory(horn);
+        machine.addAccessory(cameraAdapter);
         machine.simulateMotion();
     }
 }
