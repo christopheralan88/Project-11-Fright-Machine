@@ -26,10 +26,11 @@ public class FrightMachineTest {
         Strobe strobe = new Strobe();
         Camera camera = new Camera();
         CameraAdapter cameraAdapter = new CameraAdapter(camera);
+
         machine = new FrightMachine();
-        machine.addObservers(horn);
-        machine.addObservers(strobe);
-        machine.addObservers(cameraAdapter);
+        machine.addObserver(horn);
+        machine.addObserver(strobe);
+        machine.addObserver(cameraAdapter);
     }
 
     @Test
